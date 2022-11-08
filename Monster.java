@@ -39,14 +39,9 @@ public class Monster {
     }
 
     //methods
-    public String attack(Monster monster) {
-        monster.life = monster.life - this.getDamage();
-        if (this.getLife() > 0) {
-            return this.getName() + " has " + this.getLife() + " points remaining";
-        } else {
-            return this.getName() + " is KO!";
-        }
-        
+    public void attack(Monster monster) {
+            monster.life = monster.life - this.getDamage();
+            this.setLife(this.getLife() - monster.damage);   
     }
     
 }
